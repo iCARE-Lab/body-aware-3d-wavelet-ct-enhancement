@@ -1,1 +1,15 @@
-
+{
+  "training": [
+    {
+      "image": "../data/input/AortaSeg24_0001.nii.gz"
+    },
+    {
+      "image": "../data/input/AortaSeg24_0002.nii.gz"
+    }
+  ],
+  "test": [
+    {
+      "image": "../data/input/AortaSeg24_0081.nii.gz"
+    }
+  ]
+}
