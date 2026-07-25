@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "body-aware-3d-wavelet-ct-enhancement"
+version = "1.0.0"
+description = "Body-aware 3D Haar-wavelet enhancement for volumetric CT and CTA."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+  {name = "Muhammad Imran", email = "mimran3@kennesaw.edu"},
+  {name = "Olamide Alabi"}
+]
+keywords = [
+  "computed tomography",
+  "CT angiography",
+  "medical imaging",
+  "wavelet transform",
+  "image enhancement"
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Image Processing"
+]
+dependencies = [
+  "numpy==2.4.6",
+  "scipy==1.17.1",
+  "pandas==3.0.3",
+  "matplotlib==3.10.9",
+  "Pillow==12.2.0",
+  "PyWavelets==1.9.0",
+  "nibabel==5.4.2"
+]
+
+[project.urls]
+Homepage = "https://github.com/iCARE-Lab/body-aware-3d-wavelet-ct-enhancement"
+Repository = "https://github.com/iCARE-Lab/body-aware-3d-wavelet-ct-enhancement"
+Issues = "https://github.com/iCARE-Lab/body-aware-3d-wavelet-ct-enhancement/issues"
+
+[project.scripts]
+body-aware-wavelet = "body_aware_wavelet.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}

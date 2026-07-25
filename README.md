@@ -107,35 +107,35 @@ The implementation follows this sequence:
 
 ```text
 body-aware-3d-wavelet-ct-enhancement/
-â”œâ”€â”€ README.md
-â”œâ”€â”€ LICENSE
-â”œâ”€â”€ CITATION.cff
-â”œâ”€â”€ pyproject.toml
-â”œâ”€â”€ requirements.txt
-â”œâ”€â”€ environment.yml
-â”œâ”€â”€ run_enhancement.sh
-â”œâ”€â”€ configs/
-â”‚   â””â”€â”€ dataset_example.json
-â”œâ”€â”€ data/
-â”‚   â”œâ”€â”€ README.md
-â”‚   â”œâ”€â”€ input/
-â”‚   â”‚   â””â”€â”€ .gitkeep
-â”‚   â””â”€â”€ output/
-â”‚       â””â”€â”€ .gitkeep
-â”œâ”€â”€ src/
-â”‚   â””â”€â”€ body_aware_wavelet/
-â”‚       â”œâ”€â”€ __init__.py
-â”‚       â”œâ”€â”€ cli.py
-â”‚       â”œâ”€â”€ config.py
-â”‚       â”œâ”€â”€ dataset.py
-â”‚       â”œâ”€â”€ enhancement.py
-â”‚       â”œâ”€â”€ io.py
-â”‚       â”œâ”€â”€ mask.py
-â”‚       â”œâ”€â”€ qc.py
-â”‚       â””â”€â”€ runner.py
-â””â”€â”€ tests/
-    â”œâ”€â”€ __init__.py
-    â””â”€â”€ test_pipeline.py
+├── README.md
+├── LICENSE
+├── CITATION.cff
+├── pyproject.toml
+├── requirements.txt
+├── environment.yml
+├── run_enhancement.sh
+├── configs/
+│   └── dataset_example.json
+├── data/
+│   ├── README.md
+│   ├── input/
+│   │   └── .gitkeep
+│   └── output/
+│       └── .gitkeep
+├── src/
+│   └── body_aware_wavelet/
+│       ├── __init__.py
+│       ├── cli.py
+│       ├── config.py
+│       ├── dataset.py
+│       ├── enhancement.py
+│       ├── io.py
+│       ├── mask.py
+│       ├── qc.py
+│       └── runner.py
+└── tests/
+    ├── __init__.py
+    └── test_pipeline.py
 ```
 
 ## Data preparation
@@ -154,11 +154,11 @@ Place one or more compressed 3D NIfTI files directly in `data/input/`:
 
 ```text
 data/
-â”œâ”€â”€ input/
-â”‚   â”œâ”€â”€ case_0001.nii.gz
-â”‚   â”œâ”€â”€ case_0002.nii.gz
-â”‚   â””â”€â”€ case_0003.nii.gz
-â””â”€â”€ output/
+├── input/
+│   ├── case_0001.nii.gz
+│   ├── case_0002.nii.gz
+│   └── case_0003.nii.gz
+└── output/
 ```
 
 The case prefix is not fixed. These are all valid:
@@ -180,18 +180,18 @@ The same runner can be used with separate dataset folders:
 
 ```text
 datasets/
-â”œâ”€â”€ AortaSeg24/
-â”‚   â”œâ”€â”€ original/
-â”‚   â”‚   â”œâ”€â”€ AortaSeg24_0001.nii.gz
-â”‚   â”‚   â”œâ”€â”€ AortaSeg24_0002.nii.gz
-â”‚   â”‚   â””â”€â”€ ...
-â”‚   â””â”€â”€ enhanced/                 # created automatically
-â””â”€â”€ BTCV/
-    â”œâ”€â”€ original/
-    â”‚   â”œâ”€â”€ img0001.nii.gz
-    â”‚   â”œâ”€â”€ img0002.nii.gz
-    â”‚   â””â”€â”€ ...
-    â””â”€â”€ enhanced/                 # created automatically
+├── AortaSeg24/
+│   ├── original/
+│   │   ├── AortaSeg24_0001.nii.gz
+│   │   ├── AortaSeg24_0002.nii.gz
+│   │   └── ...
+│   └── enhanced/                 # created automatically
+└── BTCV/
+    ├── original/
+    │   ├── img0001.nii.gz
+    │   ├── img0002.nii.gz
+    │   └── ...
+    └── enhanced/                 # created automatically
 ```
 
 If your downloaded AortaSeg24 files use the nnU-Net channel suffix `_0000`,
@@ -373,16 +373,16 @@ For directory mode, a typical run produces:
 
 ```text
 data/output/
-â”œâ”€â”€ case_0001.nii.gz
-â”œâ”€â”€ case_0002.nii.gz
-â””â”€â”€ ...
+├── case_0001.nii.gz
+├── case_0002.nii.gz
+└── ...
 
 runs/latest/
-â”œâ”€â”€ case_results.csv
-â”œâ”€â”€ run_summary.json
-â””â”€â”€ previews/
-    â””â”€â”€ directory/
-        â””â”€â”€ case_0001_orthogonal_preview.png
+├── case_results.csv
+├── run_summary.json
+└── previews/
+    └── directory/
+        └── case_0001_orthogonal_preview.png
 ```
 
 The case-level report records:
@@ -472,25 +472,25 @@ the notebook imports `pywt`.
 
 | Icon | Category | Package or system | Version/status | Role |
 |:---:|---|---|---:|---|
-| ðŸ§ | System | glibc | 2.28 | Runtime |
-| ðŸ | Python | CPython | 3.11.15 | **Core** |
-| ðŸ“¦ | Environment | Conda | 25.3.0 | Environment management |
-| ðŸ”¢ | Scientific computing | NumPy | 2.4.6 | **Core** |
-| ðŸ§® | Scientific computing | SciPy | 1.17.1 | **Core** |
-| ðŸ¼ | Data processing | pandas | 3.0.3 | **Core**, run reports |
-| ðŸ“Š | Visualization | Matplotlib | 3.10.9 | **Core**, optional previews |
-| ðŸŒŠ | Wavelets | PyWavelets | 1.9.0 | **Core**, 3D DWT/IDWT |
-| ðŸ§  | Medical imaging | NiBabel | 5.4.2 | **Core**, NIfTI I/O |
-| ðŸ§¬ | Image processing | scikit-image | 0.26.0 | Available; not required |
-| ðŸ–¼ï¸ | Image processing | Pillow | 12.2.0 | Pinned Matplotlib image backend |
-| ðŸ‘ï¸ | Computer vision | OpenCV | 4.13.0 | Available; not required |
-| ðŸ©» | Medical imaging | SimpleITK | 2.5.5 | Available alternative; not active |
-| ðŸ”¥ | Deep learning | PyTorch | 2.12.0+cu126 | Downstream work; not required |
-| ðŸ“· | Deep learning | TorchVision | 0.27.0+cu126 | Downstream work; not required |
-| ðŸ§© | Medical AI | MONAI | 1.5.1 | Downstream work; not required |
-| ðŸ““ | Development | JupyterLab | 4.6.1 | Optional development interface |
-| âš¡ | GPU support | PyTorch CUDA build | 12.6 | Not required for enhancement |
-| ðŸš€ | GPU support | cuDNN | 9.10.2 | Not required for enhancement |
+| 🐧 | System | glibc | 2.28 | Runtime |
+| 🐍 | Python | CPython | 3.11.15 | **Core** |
+| 📦 | Environment | Conda | 25.3.0 | Environment management |
+| 🔢 | Scientific computing | NumPy | 2.4.6 | **Core** |
+| 🧮 | Scientific computing | SciPy | 1.17.1 | **Core** |
+| 🐼 | Data processing | pandas | 3.0.3 | **Core**, run reports |
+| 📊 | Visualization | Matplotlib | 3.10.9 | **Core**, optional previews |
+| 🌊 | Wavelets | PyWavelets | 1.9.0 | **Core**, 3D DWT/IDWT |
+| 🧠 | Medical imaging | NiBabel | 5.4.2 | **Core**, NIfTI I/O |
+| 🧬 | Image processing | scikit-image | 0.26.0 | Available; not required |
+| 🖼️ | Image processing | Pillow | 12.2.0 | Pinned Matplotlib image backend |
+| 👁️ | Computer vision | OpenCV | 4.13.0 | Available; not required |
+| 🩻 | Medical imaging | SimpleITK | 2.5.5 | Available alternative; not active |
+| 🔥 | Deep learning | PyTorch | 2.12.0+cu126 | Downstream work; not required |
+| 📷 | Deep learning | TorchVision | 0.27.0+cu126 | Downstream work; not required |
+| 🧩 | Medical AI | MONAI | 1.5.1 | Downstream work; not required |
+| 📓 | Development | JupyterLab | 4.6.1 | Optional development interface |
+| ⚡ | GPU support | PyTorch CUDA build | 12.6 | Not required for enhancement |
+| 🚀 | GPU support | cuDNN | 9.10.2 | Not required for enhancement |
 
 ## Reproducing the paper workflow
 

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository and the associated paper."
+title: "Body-Aware 3D Wavelet CT Enhancement"
+type: software
+authors:
+  - family-names: "Imran"
+    given-names: "Muhammad"
+    affiliation: "Kennesaw State University"
+  - family-names: "Alabi"
+    given-names: "Olamide"
+    affiliation: "Emory University School of Medicine"
+version: 1.0.0
+date-released: 2026-07-25
+repository-code: "https://github.com/iCARE-Lab/body-aware-3d-wavelet-ct-enhancement"
+url: "https://github.com/iCARE-Lab/body-aware-3d-wavelet-ct-enhancement"
+license: MIT
